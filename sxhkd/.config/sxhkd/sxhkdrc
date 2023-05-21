@@ -1,0 +1,64 @@
+# Launch terminal
+super + Return
+	$TERMINAL
+
+# Launch dmenu
+super + d
+	dmenu_run -h 25 -bw 5 -c -l 10
+
+# Launch the goodbye script
+super + BackSpace
+	sysact
+
+# Screenshot
+Print
+	screenshot
+
+# Pause all media
+super + shift + p
+	mpc pause ; pauseallmpv
+
+super + m
+	displayselect
+
+super + v
+	openbookmark
+
+super + shift + v
+	websearch
+
+# Media Keys
+XF86AudioMute
+	pamixer -t; kill -44 $(pidof dwmblocks)
+
+XF86AudioLowerVolume
+	pamixer --allow-boost -d 5; kill -44 $(pidof dwmblocks)
+
+XF86AudioRaiseVolume
+	pamixer --allow-boost -i 5; kill -44 $(pidof dwmblocks)
+
+XF86AudioPlay
+	mpc toggle
+
+XF86AudioPrev
+	mpc prev
+
+XF86AudioNext
+	mpc next
+
+XF86AudioStop
+	mpc stop
+
+XF86XKAudioRewind
+	mpc seek -10
+
+XF86XKAudioForward
+	mpc seek +10
+
+XF86MonBrightnessDown
+	light -U 10
+
+XF86MonBrightnessUp
+	light -A 10
+super + shift + b
+	vimscript
